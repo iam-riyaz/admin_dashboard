@@ -1,6 +1,6 @@
 import AllRoutes from "./routes/AllRoutes";
 import Topbar from "./scenes/global/Topbar";
-import Sidebar from "./scenes/global/Sidebar";
+import SidebarComponent from "./scenes/global/Sidebar";
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 
@@ -15,6 +15,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline>
       <div className="App">
+        <SidebarComponent/>
         <main className="content">
           <Topbar/>
           <AllRoutes/>
