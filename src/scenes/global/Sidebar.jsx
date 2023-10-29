@@ -40,14 +40,14 @@ const SidebarComponent=()=>{
           padding: "5px 35px 5px 20px !important",
         },
         "& .pro-inner-item:hover": {
-          color: "#868dfb !important",
+          color: "#777fee !important",
         },
         "& .pro-menu-item.active": {
           color: "#6870fa !important",
         },
       }}
     >
-      <Sidebar collapsed={isCollapsed}>
+      <Sidebar collapsed={isCollapsed} style={{height:"100%"}}>
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
@@ -66,7 +66,7 @@ const SidebarComponent=()=>{
                 ml="15px"
               >
                 <Typography variant="h3" color={colors.background[400]}>
-                  ADMINIS
+                  Admin Sidebar
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -76,7 +76,7 @@ const SidebarComponent=()=>{
           </MenuItem>
 
           {!isCollapsed && (
-            <Box mb="25px">
+            <Box mb="25px" >
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
                   alt="profile-user"
@@ -93,10 +93,10 @@ const SidebarComponent=()=>{
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Ed Roh
+                  Riyaz Ahmad
                 </Typography>
                 <Typography variant="h5" color={colors.highlight[500]}>
-                  VP Fancy Admin
+                  The admin
                 </Typography>
               </Box>
             </Box>
