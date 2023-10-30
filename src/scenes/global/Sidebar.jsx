@@ -31,7 +31,7 @@ const SidebarComponent=()=>{
         <Box
       sx={{
         "& .pro-sidebar-inner": {
-          background: `${colors.primery[400]} !important`,
+          background: `${colors.primary[400]} !important`,
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
@@ -47,7 +47,7 @@ const SidebarComponent=()=>{
         },
       }}
     >
-      <Sidebar collapsed={isCollapsed} style={{height:"100%"}}>
+      <Sidebar collapsed={isCollapsed} style={{height:"100%", backgroundColor:colors.background[300]}} >
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
@@ -65,7 +65,7 @@ const SidebarComponent=()=>{
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.background[400]}>
+                <Typography variant="h3" color={colors.secondary[600]}>
                   Admin Sidebar
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
@@ -89,13 +89,13 @@ const SidebarComponent=()=>{
               <Box textAlign="center">
                 <Typography
                   variant="h2"
-                  color={colors.background[400]}
+                  color={colors.secondary[600]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
                   Riyaz Ahmad
                 </Typography>
-                <Typography variant="h5" color={colors.highlight[500]}>
+                <Typography variant="h5" color={colors.secondary[400]}>
                   The admin
                 </Typography>
               </Box>
@@ -113,7 +113,7 @@ const SidebarComponent=()=>{
 
             <Typography
               variant="h6"
-              color={colors.background[400]}
+              color={colors.background2[600]}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Data
@@ -142,7 +142,7 @@ const SidebarComponent=()=>{
 
             <Typography
               variant="h6"
-              color={colors.background[400]}
+              color={colors.background2[600]}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Pages
@@ -171,7 +171,7 @@ const SidebarComponent=()=>{
 
             <Typography
               variant="h6"
-              color={colors.background[400]}
+              color={colors.background2[600]}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Charts
