@@ -18,6 +18,23 @@ import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import { useState } from "react";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
+  
+  return (
+    <MenuItem
+      active={selected === title}
+      style={{
+        color: colors.background[800],
+      }}
+      onClick={() => setSelected(title)}
+      icon={icon}
+    >
+      <Typography>{title}</Typography>
+      <Link to={to} />
+    </MenuItem>
+  );
 };
 
 const SidebarComponent=()=>{
@@ -47,7 +64,7 @@ const SidebarComponent=()=>{
         },
       }}
     >
-      <Sidebar collapsed={isCollapsed} style={{height:"100%", backgroundColor:colors.background[300]}} >
+      <Sidebar collapsed={isCollapsed} style={{height:"100%"}} >
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
@@ -82,7 +99,7 @@ const SidebarComponent=()=>{
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                //   src={`../../assets/user.png`}
+                  src={`../../assets/riyaz_photo.jpg`}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -107,6 +124,7 @@ const SidebarComponent=()=>{
               title="Dashboard"
               to="/"
               icon={<HomeOutlinedIcon />}
+              color={colors.background2[600]}
               selected={selected}
               setSelected={setSelected}
             />

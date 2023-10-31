@@ -1,10 +1,18 @@
 import { Contacts, Dashboard } from "@mui/icons-material"
-import { Route, Routes } from "react-router-dom"
+import { Form, Route, Routes } from "react-router-dom"
+import { Team } from "../scenes/team"
+import { Invoices } from "../scenes/invoices"
+import { Bar } from "@nivo/bar"
+import { Pie } from "../scenes/pie"
+import { Line } from "../scenes/line"
+import { FAQ } from "../scenes/faq"
+import { Calendar } from "@fullcalendar/core"
+import { Geography } from "../scenes/geography"
 
 const AllRoutes= ()=>{
     return (
         <Routes>
-            {/* <Route path="/" element={<Dashboard/>}></Route>
+            <Route path="/" element={<Dashboard/>}></Route>
             <Route path="/team" element={<Team/>}></Route>
             <Route path="/contacts" element={<Contacts/>}></Route>
             <Route path="/invoices" element={<Invoices/>}></Route>
@@ -14,7 +22,7 @@ const AllRoutes= ()=>{
             <Route path="/line" element={<Line/>}></Route>
             <Route path="/faq" element={<FAQ/>}></Route>
             <Route path="/geography" element={<Geography/>}></Route>
-            <Route path="/calendar" element={<Calendar/>}></Route> */}
+            <Route path="/calendar" element={<Calendar/>}></Route>
         </Routes>
     )
 }
