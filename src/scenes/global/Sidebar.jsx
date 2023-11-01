@@ -1,8 +1,7 @@
-
-import  {Sidebar,Menu, MenuItem,} from "react-pro-sidebar"
-import { Box, IconButton, Typography,useTheme,} from "@mui/material" 
-import {Link} from "react-router-dom"
-import { tokens } from "../../theme"
+import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
+import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
+import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
@@ -20,32 +19,37 @@ import { useState } from "react";
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
-  
   return (
-    <MenuItem
-      active={selected === title}
-      style={{
-        color: colors.background[800],
-      }}
-      onClick={() => setSelected(title)}
-      icon={icon}
-    >
-      <Typography>{title}</Typography>
-      <Link to={to} />
-    </MenuItem>
+    <Link to={to} style={{ textDecoration: "none" }}>
+      <MenuItem
+        active={selected === title}
+        style={
+          selected !== title
+            ? {
+                color: colors.background2[400],
+              }
+            : { color: "#870439" }
+        }
+        onClick={() => {
+          setSelected(title);
+        }}
+        icon={icon}
+      >
+        <Typography>{title}</Typography>
+        <Link to={to} />
+      </MenuItem>
+    </Link>
   );
 };
 
-const SidebarComponent=()=>{
+const SidebarComponent = () => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [selected, setSelected] = useState("Dashboard");
 
-    const theme= useTheme();
-    const colors= tokens(theme.palette.mode);
-    const [isCollapsed, setIsCollapsed] =useState(false);
-    const [selected, setSelected] = useState("Dashboard")
-
-    return(
-        <Box
+  return (
+    <Box
       sx={{
         "& .pro-sidebar-inner": {
           background: `${colors.primary[400]} !important`,
@@ -60,11 +64,11 @@ const SidebarComponent=()=>{
           color: "#777fee !important",
         },
         "& .pro-menu-item.active": {
-          color: "#6870fa !important",
+          color: "#5b63ff !important",
         },
       }}
     >
-      <Sidebar collapsed={isCollapsed} style={{height:"100%"}} >
+      <Sidebar collapsed={isCollapsed} style={{ height: "100%" }}>
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
@@ -72,7 +76,7 @@ const SidebarComponent=()=>{
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
               margin: "10px 0 20px 0",
-              color: colors.background[400],
+              color: colors.background2[600],
             }}
           >
             {!isCollapsed && (
@@ -82,7 +86,7 @@ const SidebarComponent=()=>{
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.secondary[600]}>
+                <Typography variant="h3" color={colors.background2[600]}>
                   Admin Sidebar
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
@@ -93,7 +97,7 @@ const SidebarComponent=()=>{
           </MenuItem>
 
           {!isCollapsed && (
-            <Box mb="25px" >
+            <Box mb="25px">
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
                   alt="profile-user"
@@ -226,7 +230,7 @@ const SidebarComponent=()=>{
         </Menu>
       </Sidebar>
     </Box>
-    )
-}
+  );
+};
 
 export default SidebarComponent;

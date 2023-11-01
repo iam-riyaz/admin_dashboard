@@ -18,7 +18,7 @@ function App() {
         <SidebarComponent/>
         <main className="content">
           <Topbar/>
-          <AllRoutes/>
+          {/* <AllRoutes/> */}
         </main>
       </div>
       </CssBaseline>
