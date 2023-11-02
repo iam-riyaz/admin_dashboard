@@ -26,7 +26,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
         style={
           selected !== title
             ? {
-                color: colors.background2[400],
+                color: colors.secondary[500],
               }
             : { color: "#870439" }
         }
@@ -35,7 +35,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
         }}
         icon={icon}
       >
-        <Typography>{title}</Typography>
+        <Typography sx={selected===title && {fontWeight:"bold"}}>{title}</Typography>
         <Link to={to} />
       </MenuItem>
     </Link>
@@ -51,24 +51,14 @@ const SidebarComponent = () => {
   return (
     <Box
       sx={{
-        "& .pro-sidebar-inner": {
-          background: `${colors.primary[400]} !important`,
-        },
-        "& .pro-icon-wrapper": {
-          backgroundColor: "transparent !important",
-        },
-        "& .pro-inner-item": {
-          padding: "5px 35px 5px 20px !important",
-        },
-        "& .pro-inner-item:hover": {
-          color: "#777fee !important",
-        },
-        "& .pro-menu-item.active": {
-          color: "#5b63ff !important",
-        },
+       
+        
+        "& .css-dip3t8":{
+          backgroundColor:`${colors.background[700]} !important`
+        }
       }}
     >
-      <Sidebar collapsed={isCollapsed} style={{ height: "100%" }}>
+      <Sidebar collapsed={isCollapsed} >
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
@@ -76,7 +66,7 @@ const SidebarComponent = () => {
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
               margin: "10px 0 20px 0",
-              color: colors.background2[600],
+              color: colors.secondary[600],
             }}
           >
             {!isCollapsed && (
@@ -86,7 +76,7 @@ const SidebarComponent = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.background2[600]}>
+                <Typography variant="h3" color={colors.secondary[600]}>
                   Admin Sidebar
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
@@ -116,7 +106,7 @@ const SidebarComponent = () => {
                 >
                   Riyaz Ahmad
                 </Typography>
-                <Typography variant="h5" color={colors.secondary[400]}>
+                <Typography variant="h5" color={colors.secondary[500]}>
                   The admin
                 </Typography>
               </Box>
@@ -128,14 +118,13 @@ const SidebarComponent = () => {
               title="Dashboard"
               to="/"
               icon={<HomeOutlinedIcon />}
-              color={colors.background2[600]}
               selected={selected}
               setSelected={setSelected}
             />
 
             <Typography
               variant="h6"
-              color={colors.background2[600]}
+              color={colors.secondary[600]}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Data
@@ -164,7 +153,7 @@ const SidebarComponent = () => {
 
             <Typography
               variant="h6"
-              color={colors.background2[600]}
+              color={colors.secondary[600]}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Pages
@@ -193,7 +182,7 @@ const SidebarComponent = () => {
 
             <Typography
               variant="h6"
-              color={colors.background2[600]}
+              color={colors.secondary[600]}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Charts
