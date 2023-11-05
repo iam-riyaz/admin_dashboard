@@ -73,7 +73,7 @@ export const Team = () => {
       <Box display="flex">
         <Header title="TEAM" subtitle="Managing the Team Members" />
       </Box>
-      <Box  height="75vh" sx={{
+      <Box  height="70vh" sx={{
         "& .MuiDataGrid-root":{
             border:"none"
         },

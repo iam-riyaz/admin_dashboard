@@ -24,11 +24,12 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       <MenuItem
         active={selected === title}
         style={
+         
           selected !== title
             ? {
-                color: colors.secondary[500],
+                color: colors.secondary[500],  height:"15%",
               }
-            : { color: "#870439" }
+            : { color: "#870439",height:"15%" }
         }
         onClick={() => {
           setSelected(title);
@@ -51,9 +52,10 @@ const SidebarComponent = () => {
   return (
     <Box
       sx={{
-       
+        
         
         "& .css-dip3t8":{
+          height: "100%",
           backgroundColor:`${colors.background[700]} !important`
         }
       }}
@@ -76,7 +78,7 @@ const SidebarComponent = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.secondary[600]}>
+                <Typography variant="h4" color={colors.secondary[600]}>
                   Admin Sidebar
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
@@ -87,19 +89,19 @@ const SidebarComponent = () => {
           </MenuItem>
 
           {!isCollapsed && (
-            <Box mb="25px">
+            <Box mb="15px">
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
                   alt="profile-user"
-                  width="100px"
-                  height="100px"
+                  width="70px"
+                  height="70px"
                   src={`../../assets/riyaz_photo.jpg`}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
               <Box textAlign="center">
                 <Typography
-                  variant="h2"
+                  variant="h3"
                   color={colors.secondary[600]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
