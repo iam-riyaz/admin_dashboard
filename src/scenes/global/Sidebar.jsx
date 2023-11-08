@@ -58,7 +58,7 @@ const SidebarComponent = () => {
         }
       }}
     >
-      <Sidebar style={{height:"100%"}} collapsed={isCollapsed} >
+      <Sidebar style={{height:"140%"}} collapsed={isCollapsed} >
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
