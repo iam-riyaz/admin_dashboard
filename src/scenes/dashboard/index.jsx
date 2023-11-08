@@ -118,7 +118,7 @@ export const Dashboard = () => {
             increase="+43%"
             icon={
               <TrafficIcon
-                sx={{ color: colors.primary[700], fontSize: "26px" }}
+                sx={{ color: colors.primary[600], fontSize: "26px" }}
               />
             }
           />
@@ -240,7 +240,7 @@ export const Dashboard = () => {
             >
               $48,352 revenue generated
             </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+            <Typography sx={{color:colors.primary[700]}}>Includes extra misc expenditures and costs</Typography>
           </Box>
         </Box>
         <Box
@@ -251,7 +251,7 @@ export const Dashboard = () => {
           <Typography
             variant="h5"
             fontWeight="600"
-            sx={{ padding: "30px 30px 0 30px" }}
+            sx={{ padding: "30px 30px 0 30px", color: colors.primary[600]}}
           >
             Sales Quantity
           </Typography>
@@ -268,7 +268,7 @@ export const Dashboard = () => {
           <Typography
             variant="h5"
             fontWeight="600"
-            sx={{ marginBottom: "15px" }}
+            sx={{ marginBottom: "15px",color:colors.primary[600] }}
           >
             Geography Based Traffic
           </Typography>

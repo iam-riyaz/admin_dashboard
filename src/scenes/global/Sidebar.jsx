@@ -53,7 +53,6 @@ const SidebarComponent = () => {
     <Box
       sx={{
         "& .css-dip3t8":{
-          height: "100%",
           backgroundColor:`${colors.background[700]} !important`
         }
       }}
@@ -77,7 +76,7 @@ const SidebarComponent = () => {
                 ml="15px"
               >
                 <Typography variant="h4" color={colors.secondary[600]}>
-                  Admin Sidebar
+                Data Visualizer
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
