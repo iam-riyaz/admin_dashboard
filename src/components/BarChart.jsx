@@ -40,6 +40,11 @@ export const BarChart = ({ isDashboard = false }) => {
             fill: colors.primary[500],
           },
         },
+        tooltip: {
+            container: {
+              color: colors.background2[500],
+            },
+          },
       }}
       keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
       indexBy="country"
@@ -120,7 +125,9 @@ export const BarChart = ({ isDashboard = false }) => {
             },
           ],
         },
+        
       ]}
+      
       role="application"
       barAriaLabel={function (e) {
         return e.id + ": " + e.formattedValue + " in country: " + e.indexValue;
