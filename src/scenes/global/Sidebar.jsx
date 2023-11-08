@@ -52,15 +52,13 @@ const SidebarComponent = () => {
   return (
     <Box
       sx={{
-        
-        
         "& .css-dip3t8":{
           height: "100%",
           backgroundColor:`${colors.background[700]} !important`
         }
       }}
     >
-      <Sidebar collapsed={isCollapsed} >
+      <Sidebar style={{height:"100%"}} collapsed={isCollapsed} >
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
