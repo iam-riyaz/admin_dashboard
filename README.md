@@ -1,5 +1,7 @@
 # React + Vite
 
+this a user visualisation dashboard via multiple charts types, forms and data list
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
